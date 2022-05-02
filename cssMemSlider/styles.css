@@ -137,11 +137,13 @@ main {
 		flex-wrap: unset;
 		align-items: center;
 	}
+	
 	.css-caption {
 		align-self: flex-start;
 		order: 3;
 		padding: 0;
 	}
+
 	.css-controls {
 		flex-wrap: wrap;
 	}
