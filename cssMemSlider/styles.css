@@ -1,0 +1,148 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #141414;
+	color: #c9d1d9;
+	font-family: sans-serif;
+}
+
+main {
+	padding: 30px;
+}
+
+.css-slider__wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: self-start;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 800px;
+	height: 50vh;
+	margin: 80px auto 0;
+}
+
+.css-slider__wrap > input {
+	display: none;
+}
+
+.css-slider {
+	position: relative;
+	width: inherit;
+	height: 40vh;
+	overflow: hidden;
+	background-color: #222222;
+}
+.css-caption {
+	width: 1px;
+	padding: 10px 0;
+}
+.css-caption > span {
+	position: absolute;
+	opacity: 0;
+	z-index: 0;
+	transition: opacity ease-in-out .5s;
+}
+
+.css-controls {
+	display: flex;
+}
+
+.css-controls label {
+	display: inline-block;
+	padding: 12px 8px;
+	cursor: pointer;
+}
+
+.css-controls label span {
+	display: block;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	border: 2px solid #dddddd;
+	transition: background ease-in-out .5s;
+}
+
+.css-slider__item {
+	position: absolute;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: inherit;
+	height: inherit;
+	opacity: 0;
+	transform: scale(1.5);
+	transform: translateX(100%);
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.css-slider__item img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0 auto;
+}
+
+.css-slider__wrap label:hover span,
+#slide1:checked ~ .css-controls label:nth-of-type(1) span,
+#slide2:checked ~ .css-controls label:nth-of-type(2) span,
+#slide3:checked ~ .css-controls label:nth-of-type(3) span,
+#slide4:checked ~ .css-controls label:nth-of-type(4) span,
+#slide5:checked ~ .css-controls label:nth-of-type(5) span,
+#slide6:checked ~ .css-controls label:nth-of-type(6) span,
+#slide7:checked ~ .css-controls label:nth-of-type(7) span,
+#slide8:checked ~ .css-controls label:nth-of-type(8) span,
+#slide9:checked ~ .css-controls label:nth-of-type(9) span,
+#slide10:checked ~ .css-controls label:nth-of-type(10) span {
+	background: #dddddd;
+}
+
+#slide1:checked ~ .css-caption > .id-caption1,
+#slide2:checked ~ .css-caption > .id-caption2,
+#slide3:checked ~ .css-caption > .id-caption3,
+#slide4:checked ~ .css-caption > .id-caption4,
+#slide5:checked ~ .css-caption > .id-caption5,
+#slide6:checked ~ .css-caption > .id-caption6,
+#slide7:checked ~ .css-caption > .id-caption7,
+#slide8:checked ~ .css-caption > .id-caption8,
+#slide9:checked ~ .css-caption > .id-caption9,
+#slide10:checked ~ .css-caption > .id-caption10 {
+	opacity: 1;
+	z-index: 1;
+}
+
+#slide1:checked ~ .css-slider > .id-slide1,
+#slide2:checked ~ .css-slider > .id-slide2,
+#slide3:checked ~ .css-slider > .id-slide3,
+#slide4:checked ~ .css-slider > .id-slide4,
+#slide5:checked ~ .css-slider > .id-slide5,
+#slide6:checked ~ .css-slider > .id-slide6,
+#slide7:checked ~ .css-slider > .id-slide7,
+#slide8:checked ~ .css-slider > .id-slide8,
+#slide9:checked ~ .css-slider > .id-slide9,
+#slide10:checked ~ .css-slider > .id-slide10 {
+	opacity: 1;
+	z-index: 1;
+	transform: translateX(0%);
+}
+
+@media (max-width: 800px) {
+	.css-slider__wrap {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: unset;
+		align-items: center;
+	}
+	.css-caption {
+		align-self: flex-start;
+		order: 3;
+		padding: 0;
+	}
+	.css-controls {
+		flex-wrap: wrap;
+	}
+}
